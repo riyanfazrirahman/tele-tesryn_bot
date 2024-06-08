@@ -5,9 +5,22 @@ const token = "6109169471:AAE9Xdyv7yu5tyXznq4AEq8ptEn5m5bIJ6E";
 
 // Create a new bot instance
 const tesbot = new TelegramBot(token, { polling: true });
-const prefix = ".";
+const prefix = "/";
 const hiTes = new RegExp(`^${prefix}tes$`);
 const gempa = new RegExp(`^${prefix}gempa$`);
+
+// Ketika bot dijalankan
+tesbot.onText(/^\/start$/, (msg) => {
+  const commandsList = `
+Halo! Saya adalah bot gempa bumi.
+Berikut adalah daftar perintah yang dapat Anda gunakan:
+  
+1. /tes - Untuk melakukan tes.
+2. /gempa - Untuk mendapatkan informasi tentang gempa terkini.
+  `;
+
+  tesbot.sendMessage(msg.chat.id, commandsList);
+});
 
 tesbot.onText(hiTes, (callback) => {
   tesbot.sendMessage(callback.from.id, "Ada yg bisa di banting? -_-");
