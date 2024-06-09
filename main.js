@@ -68,7 +68,9 @@ Potensi: ${Potensi}
 Dirasakan: ${Dirasakan}
  
 Sumber:
-[BMKG (Badan Meteorologi, Klimatologi, dan Geofisika)](https://data.bmkg.go.id/gempabumi/)
+BMKG 
+(Badan Meteorologi, Klimatologi, dan Geofisika)
+https://data.bmkg.go.id/gempabumi/
 `;
 
   bot.sendPhoto(callback.from.id, imgBMKG, {
@@ -77,7 +79,7 @@ Sumber:
 });
 
 // Set webhook
-const domain = "https://your-vercel-domain.vercel.app"; // Ganti dengan domain Vercel Anda
+const domain = "https://tele-tesryn-bot.vercel.app"; // Ganti dengan domain Vercel Anda
 bot.setWebHook(`${domain}/api/bot${token}`);
 
 // Start Express server
