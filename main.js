@@ -54,7 +54,9 @@ Potensi: ${Potensi}
 Dirasakan: ${Dirasakan}
   
 Sumber:
-[BMKG (Badan Meteorologi, Klimatologi, dan Geofisika)](https://data.bmkg.go.id/gempabumi/)
+BMKG 
+(Badan Meteorologi, Klimatologi, dan Geofisika)
+https://data.bmkg.go.id/gempabumi/
 `;
 
   tesbot.sendPhoto(callback.from.id, imgBMKG, {
