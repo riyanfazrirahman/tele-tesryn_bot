@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const TelegramBot = require("node-telegram-bot-api");
 
 // Replace 'YOUR_BOT_TOKEN' with your actual bot token
