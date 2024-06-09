@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "scripts": {
     "bot": "node main.js"
