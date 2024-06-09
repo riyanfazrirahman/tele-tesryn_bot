@@ -1,4 +1,5 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
+const express = require("express");
+const bodyParser = require("body-parser");
 const TelegramBot = require("node-telegram-bot-api");
 
 // Replace 'YOUR_BOT_TOKEN' with your actual bot token
@@ -9,6 +10,15 @@ const tesbot = new TelegramBot(token, { polling: true });
 const prefix = "/";
 const hiTes = new RegExp(`^${prefix}tes$`);
 const gempa = new RegExp(`^${prefix}gempa$`);
+
+const app = express();
+app.use(bodyParser.json());
+
+// Set webhook route
+app.post(`/bot${token}`, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
 
 // Ketika bot dijalankan
 tesbot.onText(/^\/start$/, (msg) => {
@@ -65,4 +75,12 @@ Sumber:
   });
 });
 
-console.log("Bot is running...");
+// Set webhook
+const domain = "https://your-vercel-domain.vercel.app"; // Ganti dengan domain Vercel Anda
+bot.setWebHook(`${domain}/bot${token}`);
+
+// Start Express server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Express server is listening on ${port}`);
+});
