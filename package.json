@@ -4,17 +4,16 @@
   "description": "",
   "main": "main.js",
   "engines": {
-    "node": "20.x"
+    "node": ">=10.0.0"
   },
   "scripts": {
-    "bot": "node main.js"
+    "start": "node main.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vercel/speed-insights": "^1.0.11",
     "node-telegram-bot-api": "^0.63.0",
-    "nodemon": "^3.1.3"
+    "node-fetch": "^3.0.0"
   }
 }

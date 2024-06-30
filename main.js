@@ -1,4 +1,5 @@
 const TelegramBot = require("node-telegram-bot-api");
+const fetch = require("node-fetch");
 
 // Replace 'YOUR_BOT_TOKEN' with your actual bot token
 const token = "6109169471:AAE9Xdyv7yu5tyXznq4AEq8ptEn5m5bIJ6E";
